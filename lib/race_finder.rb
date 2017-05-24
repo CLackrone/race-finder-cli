@@ -1,5 +1,8 @@
-require_relative '../config/environment'
+require 'pry'
+require 'nokogiri'
+require 'open-uri'
 
-module RaceFinder
-  # Your code goes here...
-end
+require_relative "../lib/race_finder/version"
+require_relative "../lib/race_finder/cli"
+require_relative "../lib/race_finder/scraper"
+require_relative "../lib/race_finder/races"
