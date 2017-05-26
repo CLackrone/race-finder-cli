@@ -1,20 +1,31 @@
 class RaceFinder::CLI
+
+	attr_reader :state_code
 	def call
-		puts "Welcome to Race Finder"
-		get_zip
-		get_radius
+		puts "Welcome racers!"
+		get_state
+		puts "On your mark!"
+		sleep 1
+		puts "Get set!"
+		sleep 1
+		puts "Go!"
 		list_races
-		menu
+		get_race
+		#menu
 	end
 
-	def get_zip
-		puts "Please enter the zip code you would like to search:"
-		puts "20759"
+	def get_state
+		puts "Type in the 2-letter code for the state you would like to search:"
+		self.state_code = gets.strip.upcase
+		if /\b\D{2}\b/.match?(state_code)
+			nil
+		else 
+			puts "Please enter a valid 2-letter state code"
+			get_state
+		end
 	end
 
-	def get_radius
-		puts "Please enter the number of miles you would like to search surrounding your zip code: 5, 10, 15 or 25"
-		puts "25"
+	def get_race
 	end
 
 	def list_races 
@@ -25,6 +36,7 @@ class RaceFinder::CLI
 		puts "5. PGRC Running Start 5k Training - Summer 2017"
 	end
 
+	#how will menu work? Definitely calls get_race
 	def menu
 		puts "Type the number of the race for which you would like more info:"
 		puts "2"
