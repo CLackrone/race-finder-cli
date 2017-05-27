@@ -2,23 +2,16 @@ require_relative "../race_finder.rb"
 
 
 class RaceFinder::Race
-	attr_accessor :title, :location, :date
+	attr_accessor :title, :location, :date, :url
 
-	@@races = []
+	@@all = []
 
-	def initialize(race_hash)
-		race_hash.each {|key, value| self.send(("#{key}="), value)}
-		@@races << self
+	def initialize
+		@@all << self
 	end
 
-	def self.create_from_collection(race_array)
-		race_array.each do |hash|
-			self.new(hash)
-		end
-	end
-
-	def races
-		@@races
+	def self.all
+		@@all
 	end
 
 end

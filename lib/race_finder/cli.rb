@@ -9,12 +9,12 @@ class RaceFinder::CLI
 		#get_state
 		make_races
 		puts "On your mark!"
-		#sleep 1
+		sleep 1
 		puts "Get set!"
-		#sleep 1
+		sleep 1
 		puts "Go!"
 		list_races
-		get_race
+		#get_race
 		#menu
 	end
 
@@ -30,15 +30,17 @@ class RaceFinder::CLI
 	end
 
 	def get_race
+
 	end
 
 	def make_races
-		race_array = RaceFinder::Scraper.scrape_race_index("http://www.runnersworld.com/race-finder/results?state=#{get_state}&by_location=1")
-		RaceFinder::Race.create_from_collection(race_array)
+		RaceFinder::Scraper.scrape_race_index("http://www.runnersworld.com/race-finder/results?state=#{get_state}&by_location=1")
 	end
 
 	def list_races 
-		
+		RaceFinder::Race.all.each_with_index do |race, i|
+			puts "#{i+1}. #{race.title} - #{race.date} - #{race.location}"
+		end
 	end
 
 	#how will menu work? Definitely calls get_race

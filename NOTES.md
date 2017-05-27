@@ -19,4 +19,12 @@ Enter number:
 Show title, url, location, date, and distance
 
 
+#Where do these really need to go?
+#in gemspec? What if they're already in ...???
+#just remember to think about these
 
+spec.add_development_dependency "bundler", "~> 1.11"
+spec.add_development_dependency "rake", "~> 10.0"
+spec.add_development_dependency "rspec", "~> 3.0"
+spec.add_development_dependency "pry"
+spec.add_dependency "nokogiri"
