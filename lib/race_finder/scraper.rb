@@ -20,9 +20,16 @@ class RaceFinder::Scraper
 		end
 	end
 
-	#This method is called on in the CLI based on user selection, scrapes specific race page for url
-	def self.scrape_race_url
+	#This method is called on in the CLI based on user selection, scrapes race details: title, location, distance, highlights, and link
+	def self.scrape_details(url)
+		doc = Nokogiri::HTML(open(url))
+
+		doc.css()
+
+
 	end
+
 end
+
 
 

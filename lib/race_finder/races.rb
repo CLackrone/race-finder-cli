@@ -1,4 +1,5 @@
 require_relative "../race_finder.rb"
+require 'pry'
 
 
 class RaceFinder::Race
