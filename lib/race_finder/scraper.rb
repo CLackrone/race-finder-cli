@@ -24,12 +24,19 @@ class RaceFinder::Scraper
 	def self.scrape_details(url)
 		doc = Nokogiri::HTML(open(url))
 
-		doc.css()
-
-
+		puts doc.css("#race-info").children[0..2].text
+		puts doc.css("#race-info").children[3..5].text
+		puts doc.css("#race-info").children[6..8].text
+		puts doc.css("#race-info").children[13..15].text
+		puts doc.css("#race-info").children[16..18].text
 	end
+
+
+
 
 end
 
 
 
+
+#{(i+1).text}#{(i+2).text}

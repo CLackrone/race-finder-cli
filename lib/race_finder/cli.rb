@@ -32,7 +32,6 @@ class RaceFinder::CLI
 		race_choice = gets.to_i
 		if race_choice.between?(1,25)
 			RaceFinder::Scraper.scrape_details("http://www.runnersworld.com#{RaceFinder::Race.all[race_choice-1].url}")
-			binding.pry
 		else
 			puts "Please enter a valid number"
 			race_details
