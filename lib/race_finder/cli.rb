@@ -25,6 +25,8 @@ class RaceFinder::CLI
 			puts "Please enter a valid 2-letter state code"
 			get_state
 		end
+		
+
 	end
 
 	def race_details
@@ -35,6 +37,13 @@ class RaceFinder::CLI
 		else
 			puts "Please enter a valid number"
 			race_details
+		end
+		puts "Would you like to view another race?"
+		answer = gets.strip.upcase
+		if answer == "YES"
+			race_details
+		else
+			puts "Goodbye!"
 		end
 	end
 
